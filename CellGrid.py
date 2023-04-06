@@ -1,9 +1,8 @@
 import math
 import random
-
-
 class CellGrid:
     def __init__(self,grid=None) -> None:
+        self.random_start = False
         self.cell_view_size = 10
         self.width = 10
         self.height = 10
@@ -23,16 +22,13 @@ class CellGrid:
         for i in range(self.width):
             grid.append([])
             for j in range(self.height):
-                grid[i].append(self.off_state)
-                #grid[i].append(math.floor(random.random() * 2))
-        grid[2][2] = 1
-        grid[3][2] = 1
-        grid[4][2] = 1 
-
-        print(grid)
-        print()
-
+                if not self.random_start:
+                    grid[i].append(self.off_state)
+                else:
+                    grid[i].append(math.floor(random.random() * 2))
         return grid
+
+    
     
 def main():
     cell_grid = CellGrid()

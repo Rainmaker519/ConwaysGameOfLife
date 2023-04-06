@@ -2,6 +2,7 @@ from CellGrid import CellGrid
 
 def get_adjacent_cell(cell_loc,direction):
     new_cell_loc = None
+
     if direction == "up":
         new_cell_loc = [cell_loc[0], cell_loc[1] - 1]
     if direction == "down":
@@ -22,7 +23,6 @@ def get_adjacent_cell(cell_loc,direction):
     return new_cell_loc
 
 def game_of_life_rules(cells,cell_loc):
-    #print(cells)
     #get the state of the cell
     cell_state = cells[cell_loc[0]][cell_loc[1]]
 
@@ -44,7 +44,6 @@ def game_of_life_rules(cells,cell_loc):
 
         a_cell_val = cells[a_cell_loc[0]][a_cell_loc[1]]
 
-        
         if a_cell_val >= 1:
             adjacent_cells.append(1)
         else:
@@ -56,8 +55,7 @@ def game_of_life_rules(cells,cell_loc):
         if cell == 1:
             alive_count += 1
     
-    print(f"cell {cell_loc} has {alive_count} cells alive next to it.")
-    print()
+    #print(f"cell {cell_loc} has {alive_count} cells alive next to it.")
 
     #apply the rules
     if cell_state == 1:
