@@ -50,6 +50,7 @@ c_width = 400
 c_height = 400
 canvas = tk.Canvas(window, width=c_width+1, height=c_height+1, bg="grey")
 canvas.bind("<Button-1>",recieve_click)
+canvas.bind("<B1-Motion>",recieve_click)
 canvas.pack()
 
 #cell grid
